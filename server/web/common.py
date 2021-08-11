@@ -28,3 +28,4 @@ if os.path.isdir(imgPath) == False:
 client = motor.motor_asyncio.AsyncIOMotorClient("127.0.0.1", 27017)
 project = client['project']
 users = project['users']
+jobs = project['jobs']

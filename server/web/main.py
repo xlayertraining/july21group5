@@ -5,12 +5,14 @@ from common import *
 # Format will be like --> from filename(without the .py extension) import classname
 from sign_in import SignInHandler
 from sign_up import SignUpHandler
-
-
+from jobs import JobsHandler
+from jobs_search import JobsSearchHandler
 def make_app():
     return tornado.web.Application([
         (r"/web/api/sign/up", SignUpHandler),
         (r"/web/api/sign/in", SignInHandler),
+        (r"/web/api/jobs", JobsHandler),
+        (r"/web/api/jobs/search", JobsSearchHandler),
     ])
 
 
