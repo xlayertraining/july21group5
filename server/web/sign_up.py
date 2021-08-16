@@ -70,6 +70,7 @@ class SignUpHandler(tornado.web.RequestHandler):
                 message = "Please enter valid email address"
                 raise Exception
             else:
+                '''
                 # checking if email address if of valid format
                 # Regular expression concept to check format of string in email
                 #something    @ something    . something
@@ -80,6 +81,7 @@ class SignUpHandler(tornado.web.RequestHandler):
                     status = False
                     message = "Invalid Email Format"
                     raise Exception
+                '''
             try:
                 password = jsonBody.get('password')
                 if len(password) < 6 or len(password) > 15:

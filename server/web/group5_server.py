@@ -9,14 +9,14 @@ from jobs import JobsHandler
 from jobs_search import JobsSearchHandler
 def make_app():
     return tornado.web.Application([
-        (r"/web/api/sign/up", SignUpHandler),
-        (r"/web/api/sign/in", SignInHandler),
-        (r"/web/api/jobs", JobsHandler),
-        (r"/web/api/jobs/search", JobsSearchHandler),
+        (r"/julygroup5_web/api/sign/up", SignUpHandler),
+        (r"/julygroup5_web/api/sign/in", SignInHandler),
+        (r"/julygroup5_web/api/jobs", JobsHandler),
+        (r"/julygroup5_web/api/jobs/search", JobsSearchHandler),
     ])
 
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(8888)
+    app.listen(8005)
     tornado.ioloop.IOLoop.current().start()

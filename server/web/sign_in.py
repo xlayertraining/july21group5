@@ -2,6 +2,7 @@ from common import *
 
 
 class SignInHandler(tornado.web.RequestHandler):
+    SUPPORTED_METHODS = ('GET', 'POST', 'DELETE','PUT','OPTIONS')
     async def post(self):
         code = 4000
         status = False
@@ -15,16 +16,19 @@ class SignInHandler(tornado.web.RequestHandler):
                 status = False
                 message = "Invalid JSON Body"
                 raise Exception
+            print(jsonBody)
             # Fields will be firstName, lastName, phoneNumber, emailAddress and password sent from front end.
             try:
                 # if in case no variable named firstName was sent, this will be None(null)
                 email = jsonBody.get('email')
                 if email == None:
                     raise Exception
+                '''
                 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
                 if(re.match(regex, email)) == None:
                     raise Exception
                 email = email.lower()
+                '''
             except:
                 code = 9033
                 status = False
@@ -65,7 +69,7 @@ class SignInHandler(tornado.web.RequestHandler):
                 userAccountId = str(userFind['_id'])
                 encoded_jwt = jwt.encode(
                     {"key": userAccountId}, "icfai", algorithm="HS256")
-                result.append({"Authorization": encoded_jwt})
+                result.append({"Authorization": str(encoded_jwt.decode())})
                 code = 2000
                 status = True
                 message = "Sign-in successful! Welcome"
@@ -73,7 +77,6 @@ class SignInHandler(tornado.web.RequestHandler):
             status = False
             # self.set_status(400)
             if not len(message):
-                template = 'Exception: {0}. Argument: {1!r}'
                 code = 5010
                 message = 'Internal Error, Please Contact the Support Team.'
         response = {
@@ -86,7 +89,7 @@ class SignInHandler(tornado.web.RequestHandler):
             self.write(response)
             self.finish()
             return
-        except Exception as e:
+        except:
             status = False
             code = 5011
             message = 'Internal Error, Please Contact the Support Team.'
