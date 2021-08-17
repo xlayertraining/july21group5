@@ -1,14 +1,10 @@
 from common import *
 
 
-class SecureHeader(tornado.web.RequestHandler):
-    async def decrypt(handler):
-        code = 4000
-        status = False
-        message = ""
-        result = []
-        try:
-            Authorization = handler.request.headers['Authorization'].split()
+class SecureHeader():
+    async def decrypt(Authorization):
+        if True:
+            Authorization = Authorization.split()
             firstPart = Authorization[0]
             secondPart = Authorization[1]
             if firstPart != "Bearer":
@@ -20,20 +16,10 @@ class SecureHeader(tornado.web.RequestHandler):
                     "_id": ObjectId(userAccountId['key'])
                 }
             )
+            print(accFind)
             if accFind == None:
                 raise Exception
             else:
-                print("Got")
-        except:
-            code = 7483
-            status = False
-            message = "Invalid Authorization"
-            raise Exception
-        response = {
-            'code': code,
-            'status': status,
-            'message': message,
-            'result': result
-        }
-        handler.write(response)
-        handler.finish()
+                return str(accFind['_id'])
+        else:
+            return None

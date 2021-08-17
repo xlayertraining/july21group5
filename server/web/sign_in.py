@@ -2,7 +2,8 @@ from common import *
 
 
 class SignInHandler(tornado.web.RequestHandler):
-    SUPPORTED_METHODS = ('GET', 'POST', 'DELETE','PUT','OPTIONS')
+    SUPPORTED_METHODS = ('GET', 'POST', 'DELETE', 'PUT', 'OPTIONS')
+
     async def post(self):
         code = 4000
         status = False
@@ -69,7 +70,7 @@ class SignInHandler(tornado.web.RequestHandler):
                 userAccountId = str(userFind['_id'])
                 encoded_jwt = jwt.encode(
                     {"key": userAccountId}, "icfai", algorithm="HS256")
-                result.append({"Authorization": str(encoded_jwt.decode())})
+                result.append({"Authorization": str(encoded_jwt)})
                 code = 2000
                 status = True
                 message = "Sign-in successful! Welcome"

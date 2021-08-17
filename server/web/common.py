@@ -17,6 +17,11 @@ import os
 import requests
 import jwt
 
+
+def timeNow():
+    return int(time.time())
+
+
 # --> uploadUrl = "https://icfai.com/uploads"
 uploadUrl = r"file:///D:/icfai/uploads"
 # --> imgPath = "../uploads" --> https://icfai.com/uploads/3298392893.png
@@ -29,3 +34,5 @@ client = motor.motor_asyncio.AsyncIOMotorClient("127.0.0.1", 27017)
 project = client['project']
 users = project['users']
 jobs = project['jobs']
+applications = project['applications']
+profile = project['profile']
