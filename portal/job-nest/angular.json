@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "job-nest"
+  "defaultProject": "job-nest",
+  "cli": {
+    "analytics": false
+  }
 }
