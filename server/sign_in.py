@@ -21,7 +21,7 @@ class SignInHandler(tornado.web.RequestHandler):
             # Fields will be firstName, lastName, phoneNumber, emailAddress and password sent from front end.
             try:
                 # if in case no variable named firstName was sent, this will be None(null)
-                email = jsonBody.get('email')
+                email = jsonBody.get('emailAddress')
                 if email == None:
                     raise Exception
                 '''
@@ -70,6 +70,10 @@ class SignInHandler(tornado.web.RequestHandler):
                 userAccountId = str(userFind['_id'])
                 encoded_jwt = jwt.encode(
                     {"key": userAccountId}, "icfai", algorithm="HS256")
+
+                if type(encoded_jwt) is bytes:
+                    encoded_jwt = encoded_jwt.decode()
+                    
                 result.append({"Authorization": str(encoded_jwt)})
                 code = 2000
                 status = True
