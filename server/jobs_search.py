@@ -1,5 +1,5 @@
 from common import *
-
+from auth import SecureHeader
 
 class JobsSearchHandler(tornado.web.RequestHandler):
     async def get(self):
@@ -9,6 +9,12 @@ class JobsSearchHandler(tornado.web.RequestHandler):
         result = []
 
         try:
+            account_id = await SecureHeader.decrypt(self.request.headers["Authorization"])
+            if account_id == None:
+                code = 8765
+                status = False
+                message = "You're not authorized"
+                raise Exception
             try:
                 keyword = str(self.request.arguments['keyword'][0].decode())
                 if keyword == "" or keyword == None:

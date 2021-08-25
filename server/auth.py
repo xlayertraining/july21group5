@@ -3,7 +3,7 @@ from common import *
 
 class SecureHeader():
     async def decrypt(Authorization):
-        if True:
+        try:
             Authorization = Authorization.split()
             firstPart = Authorization[0]
             secondPart = Authorization[1]
@@ -21,5 +21,5 @@ class SecureHeader():
                 raise Exception
             else:
                 return str(accFind['_id'])
-        else:
+        except:
             return None
