@@ -11,12 +11,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {MatButtonModule} from '@angular/material/button';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
