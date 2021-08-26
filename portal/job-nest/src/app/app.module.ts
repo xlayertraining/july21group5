@@ -30,7 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {MatButtonModule} from '@angular/material/button';
-// import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -40,17 +40,21 @@ import {MatButtonModule} from '@angular/material/button';
 
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    SignInComponent,
+    SignUpComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-
-    SignInComponent,
-    SignUpComponent,
-    // UserProfileComponent,
+    MatFormFieldModule,
+    MatInputModule, 
+    MatButtonModule,
+    
+    
   ],
   
   providers: [],
