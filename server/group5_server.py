@@ -13,7 +13,6 @@ from user_profile import ProfileHandler
 from my_jobs import MyJobsHandler
 from my_applications import ApplicationsHandler
 
-
 def make_app():
     return tornado.web.Application([
         (r"/julygroup5_web/api/sign/up", SignUpHandler),
