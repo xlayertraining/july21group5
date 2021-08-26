@@ -13,6 +13,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { ApplyForJobComponent } from './components/apply-for-job/apply-for-job.component';
+import { OfferJobComponent } from './components/offer-job/offer-job.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { SubmitApplicationComponent } from './components/submit-application/submit-application.component';
 const routes: Routes = [
   {
     path: '',
@@ -37,6 +40,18 @@ const routes: Routes = [
   {
     path: 'apply_for_job',
     component: ApplyForJobComponent
+  },
+  {
+    path: 'offer_jon',
+    component: OfferJobComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  },
+  {
+    path: 'submit_application',
+    component: SubmitApplicationComponent
   }
 
 ];

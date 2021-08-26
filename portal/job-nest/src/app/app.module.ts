@@ -19,6 +19,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ApplyForJobComponent } from './components/apply-for-job/apply-for-job.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { SettingsComponent } from './components/settings/settings.component';
+import { SubmitApplicationComponent } from './components/submit-application/submit-application.component';
+import { OfferJobComponent } from './components/offer-job/offer-job.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     SignUpComponent,
     UserProfileComponent,
     ApplyForJobComponent,
+    SettingsComponent,
+    SubmitApplicationComponent,
+    OfferJobComponent,
   ],
   imports: [
     BrowserModule,
