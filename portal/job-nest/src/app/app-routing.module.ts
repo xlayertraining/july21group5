@@ -42,7 +42,7 @@ const routes: Routes = [
     component: ApplyForJobComponent
   },
   {
-    path: 'offer_jon',
+    path: 'offer_job',
     component: OfferJobComponent
   },
   {
