@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   {
     path: 'sign_in',
@@ -18,10 +19,25 @@ const routes: Routes = [
     // component: GrievanceInfoDialogComponent
     // }
 ];
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {MatButtonModule} from '@angular/material/button';
+// import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+
 @NgModule({
 
   declarations: [
     AppComponent,
+
     LoginComponent,
     SignupComponent,
     HomeComponent
@@ -31,8 +47,21 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+
+    SignInComponent,
+    SignUpComponent,
+    // UserProfileComponent,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private router: Router) {
+
+    // this.router.navigate(['sign_in']);
+
+  }
+
+}

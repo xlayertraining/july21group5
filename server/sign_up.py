@@ -63,7 +63,7 @@ class SignUpHandler(tornado.web.RequestHandler):
                 message = "Phone number is already registered"
                 raise Exception
 
-            email = jsonBody.get('email')
+            email = jsonBody.get('emailAddress')
             if email == None or email == "":
                 code = 9022
                 status = False
@@ -92,7 +92,7 @@ class SignUpHandler(tornado.web.RequestHandler):
                 message = "Please enter valid password (6-15 characters)"
                 raise Exception
 
-            users.insert_one(
+            rs = await users.insert_one(
                 {
                     "firstName": firstName,
                     "lastName": lastName,
@@ -102,9 +102,21 @@ class SignUpHandler(tornado.web.RequestHandler):
                 }
             )
 
+            encoded_jwt = jwt.encode(
+                {
+                    "key": str(rs.inserted_id)
+                }, 
+                "icfai", algorithm="HS256"
+            )
+
+            if type(encoded_jwt) is bytes:
+                encoded_jwt = encoded_jwt.decode()
+
+            result.append({"Authorization": str(encoded_jwt)})
+
             code = 2000
             status = True
-            message = "Sign-up successfull"
+            message = "Sign-up successful"
         except Exception as e:
             status = False
             # self.set_status(400)
