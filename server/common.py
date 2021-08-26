@@ -32,7 +32,7 @@ if os.path.isdir(imgPath) == False:
 # Creating database connection and initializing databases and tables required for your backend
 client = motor.motor_asyncio.AsyncIOMotorClient("127.0.0.1", 27017)
 project = client['JobNest']
-users = project['users']
-jobs = project['jobs']
-applications = project['applications']
+users = project['account']
+jobs = project['job']
+applications = project['application']
 profile = project['profile']
