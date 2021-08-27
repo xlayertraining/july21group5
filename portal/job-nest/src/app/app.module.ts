@@ -37,7 +37,7 @@ import {MatSelectModule} from '@angular/material/select';
     ApplyForJobComponent,
     SettingsComponent,
     SubmitApplicationComponent,
-    OfferJobComponent,
+    OfferJobComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,7 @@ import {MatSelectModule} from '@angular/material/select';
     RouterModule,
     MatIconModule,
     MatToolbarModule,
-    MatSelectModule,
+    MatSelectModule
   ],
 
   providers: [],
