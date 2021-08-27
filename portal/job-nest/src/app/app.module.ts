@@ -22,7 +22,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SubmitApplicationComponent } from './components/submit-application/submit-application.component';
 import { OfferJobComponent } from './components/offer-job/offer-job.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
 
@@ -52,6 +52,7 @@ import { OfferJobComponent } from './components/offer-job/offer-job.component';
     RouterModule,
     MatIconModule,
     MatToolbarModule,
+    MatSelectModule,
   ],
 
   providers: [],
