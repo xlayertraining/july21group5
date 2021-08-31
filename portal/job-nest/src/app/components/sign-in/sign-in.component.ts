@@ -7,25 +7,12 @@ import { environment } from 'src/environments/environment';
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
-<<<<<<< HEAD
-  
-})
-export class SignInComponent implements OnInit {
- 
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  
-=======
   providers: [NetworkService]
 })
 export class SignInComponent implements OnInit {
-
   email: String = '';
   password: String = '';
-
+  
   constructor(private networkService: NetworkService, private router: Router) { }
 
   ngOnInit(): void {
@@ -78,7 +65,4 @@ export class SignInComponent implements OnInit {
   onSignUp(): void {
     this.router.navigate(['sign_up']);
   }
-
-
->>>>>>> be4a7e7c24c21fa570d655bdaf9889dabe6b9c47
 }
