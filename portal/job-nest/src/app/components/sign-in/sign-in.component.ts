@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit {
     this.networkService.postSignIn(restBody).subscribe( success => {
       console.log(success);
       if (success.status == true) {
-        // sign is success
+        // sign in success
         localStorage.setItem(environment.authKey, success.result[0].Authorization);
         this.router.navigate(['home']);
       } else {
