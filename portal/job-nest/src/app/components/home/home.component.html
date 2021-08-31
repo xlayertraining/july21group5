@@ -1,18 +1,33 @@
+<mat-toolbar color="primary" fxLayoutAlign="space-between center" >
+    <div>
+        <span>Job Nest</span>
+    </div>
+    <div>
+        <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>settings</mat-icon>
+        </button> -->
+        <button matTooltip="Sign Out" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onSignOut()">
+            <mat-icon>power_settings_new</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
 <div fxLayout="column" fxLayoutAlign="center center" style="padding: 60px;">
 
     <style>
-        h1 {color:rgb(103, 71, 190);}
+        h1 {
+            color: rgb(103, 71, 190);
+        }
     </style>
-    
- <h1 style="color: rgb(255, 60, 0);" style="font-size: 35px;" > Home </h1>
 
- <p>Start your job search</p>
+    <h1 style="color: rgb(255, 60, 0);" style="font-size: 35px;"> Home </h1>
+
+    <p>Start your job search</p>
 
 
-<br> <button  style="block-size: 30px; font-size:20px ;" >Offer job</button>
+    <br> <button style="block-size: 30px; font-size:20px ;">Offer job</button>
 
-<br><button style="font-size: 20px; color: rgb(250, 11, 11);">Aplly for job</button>
+    <br><button style="font-size: 20px; color: rgb(250, 11, 11);">Aplly for job</button>
 
-  
-</div> 
 
+</div>
