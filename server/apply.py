@@ -3,6 +3,11 @@ from auth import *
 
 
 class ApplyJobsHandler(tornado.web.RequestHandler):
+
+    def options(self):
+        self.write({})
+        return
+
     async def post(self):
         code = 4000
         status = False

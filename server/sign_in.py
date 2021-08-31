@@ -2,7 +2,12 @@ from common import *
 
 
 class SignInHandler(tornado.web.RequestHandler):
-    SUPPORTED_METHODS = ('GET', 'POST', 'DELETE', 'PUT', 'OPTIONS')
+    
+
+    def options(self):
+        self.write({})
+        return
+
 
     async def post(self):
         code = 4000
