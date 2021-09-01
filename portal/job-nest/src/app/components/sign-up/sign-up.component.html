@@ -3,30 +3,49 @@
 
     <p>Enter your details to sign up.</p>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline" >
         <mat-label>First Name</mat-label>
+
         <input matInput="[(ngModel)]firstName">
+
+        <input matInput [(ngModel)]="firstName">
+
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
+
         <input matInput="[(ngModel)]latName">
+
+        <input matInput [(ngModel)]="lastName">
+
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>Phone number</mat-label>
+
         <input matInput="[(ngModel)]phoneNumber">
+
+        <input matInput [(ngModel)]="phoneNumber">
+
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>Email address</mat-label>
+
         <input matInput="[(ngModel)]email">
+
+        <input matInput [(ngModel)]="email">
+
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
+
         <input matInput="[(ngModel)]password" >
+        <input matInput [(ngModel)]="password">
+
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Sign Up</button>
-
+    <button mat-raised-button color="primary" (click)="onSignUpPost()" >Sign Up</button>
+    
 </div>
