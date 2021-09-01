@@ -3,15 +3,20 @@
 
     <p>Enter your username and password to Sign In.</p>
 
-    <mat-form-field>
-        <mat-label>Email dddress</mat-label>
-        <input matInput>
+    <mat-form-field appearance="outline">
+        <mat-label>Email address</mat-label>
+        <input matInput ="[(ngModel)]email">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="password">
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Sign In</button>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <p style="margin-right: 20px;">Don't have any account? </p>
+        <button mat-raised-button color="primary" (click)="onSignUp()" >Sign Up</button>    
+    </div>
+
+    <button style="margin-top: 80px;" mat-raised-button color="primary" (click)="onSignInPost()" >Sign In</button>
 
 </div>

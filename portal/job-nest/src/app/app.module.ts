@@ -4,8 +4,6 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { Router, Routes, RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component'
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,14 +20,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SubmitApplicationComponent } from './components/submit-application/submit-application.component';
 import { OfferJobComponent } from './components/offer-job/offer-job.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
 
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
     HomeComponent,
     SignInComponent,
     SignUpComponent,
@@ -52,6 +49,9 @@ import { OfferJobComponent } from './components/offer-job/offer-job.component';
     RouterModule,
     MatIconModule,
     MatToolbarModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatTooltipModule,  
   ],
 
   providers: [],

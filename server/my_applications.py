@@ -3,6 +3,11 @@ from auth import *
 
 
 class ApplicationsHandler(tornado.web.RequestHandler):
+
+    def options(self):
+        self.write({})
+        return
+
     async def get(self):
         code = 4000
         status = False
