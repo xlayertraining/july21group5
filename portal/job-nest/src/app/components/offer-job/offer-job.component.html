@@ -1,45 +1,62 @@
+<mat-toolbar color="primary" fxLayoutAlign="start center">
+  <div>
+    <button matTooltip="Back" mat-icon-button class="example-icon favorite-icon" (click)="goHome()"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>arrow_backward</mat-icon>
+    </button>
+  </div>
+  <div style="margin-left: 20px;">
+    <span>Offer a Job</span>
+  </div>
+</mat-toolbar>
+
 <div fxLayout="column" fxLayoutAlign="center center" style="padding: 60px;">
 
-  <mat-form-field appearance="outline" >
-    <mat-label>Designation</mat-label>
-    <input matInput [(ngModel)]="designation">
-</mat-form-field>
+  <div fxLayout="column" style="width: 350px;">
+    <mat-form-field appearance="outline">
+      <mat-label>Designation</mat-label>
+      <input matInput [(ngModel)]="designation">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Company Name</mat-label>
+      <input matInput [(ngModel)]="companyName">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="description">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Minimum Qualification</mat-label>
+      <input matInput [(ngModel)]="minimumQualification">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Preferred Qualification</mat-label>
+      <input matInput [(ngModel)]="preferredQualification">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Salary</mat-label>
+      <input matInput [(ngModel)]="salary" type="number">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Location</mat-label>
+      <input matInput [(ngModel)]="location">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Remote Job</mat-label>
+      <mat-select [(ngModel)]="remoteJob">
+        <mat-option *ngFor="let idx of remoteJobsList" [value]="idx.value">
+          {{idx.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-<mat-form-field appearance="outline">
-    <mat-label>Company Name</mat-label>
-    <input matInput [(ngModel)]="companyName">
-</mat-form-field>
+  <button style="margin-top: 30px;" mat-raised-button color="primary" (click)="onOfferJobPost()">APPLY</button>
 
-<mat-form-field appearance="outline">
-    <mat-label>Description</mat-label>
-    <input matInput [(ngModel)]="description">
-</mat-form-field>
 
-<mat-form-field appearance="outline">
-    <mat-label>Minimum Qualification</mat-label>
-    <input matInput [(ngModel)]="minimumQualification">
-</mat-form-field>
-<mat-form-field appearance="outline">
-    <mat-label>Preferred Qualification</mat-label>
-    <input matInput [(ngModel)]="preferredQualification">
-</mat-form-field>
-
-<mat-form-field appearance="outline">
-  <mat-label>Salary</mat-label>
-  <input matInput [(ngModel)]="salary">
-</mat-form-field>
-<mat-form-field appearance="outline">
-  <mat-label>Account Id</mat-label>
-  <input matInput [(ngModel)]="accountId">
-</mat-form-field>
-<mat-form-field appearance="outline">
-  <mat-label>Location</mat-label>
-  <input matInput [(ngModel)]="location">
-</mat-form-field>
-<mat-form-field appearance="outline">
-  <mat-label>Remote Job</mat-label>
-  <input matInput [(ngModel)]="remoteJob">
-</mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="onOfferJobPost()">APPLY</button>
 </div>

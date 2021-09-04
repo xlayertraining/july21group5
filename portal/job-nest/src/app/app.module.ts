@@ -22,6 +22,8 @@ import { SubmitApplicationComponent } from './components/submit-application/subm
 import { OfferJobComponent } from './components/offer-job/offer-job.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatOptionModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
 
@@ -51,7 +53,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     MatSelectModule,
     HttpClientModule,
-    MatTooltipModule,  
+    MatTooltipModule,
+    MatOptionModule,
+    MatCardModule
   ],
 
   providers: [],

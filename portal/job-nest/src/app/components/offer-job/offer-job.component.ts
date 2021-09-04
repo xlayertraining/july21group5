@@ -18,12 +18,23 @@ export class OfferJobComponent implements OnInit {
   salary: String = '';
   accountId: String = '';
   location: String = '';
-  remoteJob: String = '';
+  remoteJob: boolean = false;
+
+  remoteJobsList: any[] = [
+    {
+      value: true, 
+      viewValue: 'Yes'
+    },
+    {
+      value: false, 
+      viewValue: 'No'
+    }
+  ];
 
   constructor(private networkService: NetworkService, private router: Router) { }
 
   ngOnInit(): void {
-  }
+  }  
 
   onOfferJobPost(): void {
 
@@ -58,18 +69,8 @@ export class OfferJobComponent implements OnInit {
       return;
     }
 
-    if (this.accountId.length == 0) {
-      alert('Please enter valid accountId.');
-      return;
-    }
-
     if (this.location.length == 0) {
       alert('Please enter valid location.');
-      return;
-    }
-
-    if (this.remoteJob.length == 0) {
-      alert('Please enter valid option for remoteJob.');
       return;
     }
 
@@ -80,7 +81,6 @@ export class OfferJobComponent implements OnInit {
       minimumQualification: this.minimumQualification,
       preferredQualification: this.preferredQualification,
       salary: this.salary,
-      accountId: this.accountId,
       location: this.location,
       remoteJob: this.remoteJob
     };
@@ -90,9 +90,7 @@ export class OfferJobComponent implements OnInit {
     this.networkService.postOfferJob(restBody).subscribe( success => {
       console.log(success);
       if (success.status == true) {
-        // Job has been posted
-        localStorage.setItem(environment.authKey, success.result[0].Authorization);
-        this.router.navigate(['submit_application']);
+        this.router.navigate(['home']);
       } else {
         alert(success.message);
       }
@@ -101,6 +99,10 @@ export class OfferJobComponent implements OnInit {
 
     });
 
+  }
+
+  goHome(): void {
+    this.router.navigate(['home']);
   }
 
 }

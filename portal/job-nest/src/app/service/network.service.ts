@@ -19,7 +19,21 @@ export class NetworkService {
   }
 
   postOfferJob(body: any): Observable<any> {
-    return this.httpHandler.post<any>(environment.serverUrl + '/Offer/jobs', body, {});
+    const authHeaders = {
+      Authorization: 'Bearer ' + localStorage.getItem(environment.authKey)
+    };
+    return this.httpHandler.post<any>(environment.serverUrl + '/jobs', body, {
+      headers: authHeaders
+    });
+  }
+
+  getJobs(): Observable<any> {
+    const authHeaders = {
+      Authorization: 'Bearer ' + localStorage.getItem(environment.authKey)
+    };
+    return this.httpHandler.get<any>(environment.serverUrl + '/jobs', {
+      headers: authHeaders
+    });
   }
 
 }

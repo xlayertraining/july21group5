@@ -1,28 +1,77 @@
-<div style="background-color: rgb(57, 148, 233); height: 80px;">
-</div>
-<div fxLayout="row" fxLayoutAlign="center center" style="padding: 30px;">
-    <mat-form-field appearance="outline" style="margin-top: 30px; margin-right: 20px; min-width: 400px;">
-        <mat-label>Search</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <button mat-fab color="primary" aria-label="Example icon button with a home icon">
-        <mat-icon>search</mat-icon>
-    </button>
-</div>
+<mat-toolbar color="primary" fxLayoutAlign="start center">
+    <div>
+        <button matTooltip="Back" mat-icon-button class="example-icon favorite-icon" (click)="goHome()"
+            aria-label="Example icon-button with heart icon">
+            <mat-icon>arrow_backward</mat-icon>
+        </button>
+    </div>
+    <div style="margin-left: 20px;">
+        <span>Apply for job</span>
+    </div>
+</mat-toolbar>
 
-<div fxLayout="column" fxLayoutAlign="center center" >
+<div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px;">
     <h1>Search for any jobs</h1>
 </div>
 
-<div fxLayout="column" fxLayoutAlign="center center" >
-<mat-form-field appearance="fill">
-    <mat-label>JOB TYPE</mat-label>
-    <select matNativeControl required>
-      <option value="web">web Devoloper</option>
-      <option value="banking">banking</option>
-      <option value="Bpo">Bpo job</option>
-      <option value="Work from home">Work from home</option>
-    </select> 
-  </mat-form-field>
-  </div>
+<div fxLayout="row" fxLayoutAlign="center center" >
+    <mat-form-field appearance="outline" style="margin-top: 30px;">
+        <mat-label>JOB TYPE</mat-label>
+        <mat-select matNativeControl required>
+            <mat-option *ngFor="let idx of applyJobsList" [value]="idx.value">{{idx.viewValue}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field appearance="outline" style="margin-top: 30px; margin-right: 20px; min-width: 400px; margin-left: 20px;">
+            <mat-label>Search</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <button mat-fab color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+</div>
+
+<!-- Jobs lists -->
+<div>
+    <div *ngFor="let idx2 of jobListArray" style="padding: 50px;">
+        <mat-card>
+            <div>
+                <b style="font-size: 20pt;">Designation</b>
+                <br>
+                <a style="font-size: 14pt; margin-top: 20px;">{{idx2.designation}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Company Name</b>
+                <br>
+                <a>{{idx2.companyName}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Salary</b>
+                <br>
+                <a>&#x20B9; {{idx2.salary}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Minimum Qualification</b>
+                <br>
+                <a>{{idx2.minimumQualification}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Preferred Qualification</b>
+                <br>
+                <a>{{idx2.preferredQualification}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Submitted by</b>
+                <br>
+                <a>{{idx2.submittedBy}}</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <b>Description</b>
+                <br>
+                <a>{{idx2.description}}</a>
+            </div>
+        </mat-card>
+    </div>
+</div>
