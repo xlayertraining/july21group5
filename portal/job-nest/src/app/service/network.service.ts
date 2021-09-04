@@ -18,4 +18,8 @@ export class NetworkService {
     return this.httpHandler.post<any>(environment.serverUrl + '/sign/up', body, {});
   }
 
+  postOfferJob(body: any): Observable<any> {
+    return this.httpHandler.post<any>(environment.serverUrl + '/Offer/jobs', body, {});
+  }
+
 }
