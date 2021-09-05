@@ -38,40 +38,41 @@
     <div *ngFor="let idx2 of jobListArray" style="padding: 50px;">
         <mat-card>
             <div>
-                <b style="font-size: 20pt;">Designation</b>
+                <b style="font-size: 16pt;">Designation</b>
                 <br>
-                <a style="font-size: 14pt; margin-top: 20px;">{{idx2.designation}}</a>
+                <a style="font-size: 10pt; margin-top: 20px;">{{idx2.designation}}</a>
             </div>
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; font-size: 0pt;">
                 <b>Company Name</b>
                 <br>
-                <a>{{idx2.companyName}}</a>
+                <a style="font-size: 16pt;">{{idx2.companyName}}</a>
             </div>
-            <div style="margin-top: 10px;">
-                <b>Salary</b>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                <b style="font-size: 20pt;">Salary</b>
                 <br>
-                <a>&#x20B9; {{idx2.salary}}</a>
+                <a style="font-size: 10pt;">&#x20B9; {{idx2.salary}}</a>
             </div>
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; font-size: 16pt;">
                 <b>Minimum Qualification</b>
                 <br>
                 <a>{{idx2.minimumQualification}}</a>
             </div>
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; font-size: 16pt;">
                 <b>Preferred Qualification</b>
                 <br>
                 <a>{{idx2.preferredQualification}}</a>
             </div>
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; font-size:16pt ;">
                 <b>Submitted by</b>
                 <br>
                 <a>{{idx2.submittedBy}}</a>
             </div>
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; font-size: 16pt;">
                 <b>Description</b>
                 <br>
                 <a>{{idx2.description}}</a>
             </div>
+            
         </mat-card>
     </div>
 </div>
