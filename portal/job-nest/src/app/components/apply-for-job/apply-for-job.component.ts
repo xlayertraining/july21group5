@@ -17,6 +17,14 @@ export class ApplyForJobComponent implements OnInit {
     {
       value: 2, 
       viewValue: 'BPO Job'
+    },
+    {
+      value: 3, 
+      viewValue: 'BANKING'
+    },
+    {
+      value: 4, 
+      viewValue: 'WEBDEVOLOPER'
     }
   ];
 
