@@ -13,9 +13,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onSettings(): void {
+    localStorage.clear();
+    this.router.navigate(['settings']);
+  }
+
   onSignOut(): void {
     localStorage.clear();
     this.router.navigate(['sign_in']);
+  }
+
+  onOfferJob(): void {
+    this.router.navigate(['offer_job']);
+  }
+
+  onApplyJob(): void {
+    this.router.navigate(['apply_for_job']);
   }
 
 }
