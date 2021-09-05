@@ -7,19 +7,22 @@ import { environment } from 'src/environments/environment';
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
+
   providers: [NetworkService]
 })
 export class SignUpComponent implements OnInit {
+
+  constructor(private networkService: NetworkService, private router: Router) { }
   firstName: String = '';
   lastName: String = '';
   phoneNumber: String = '';
   email: String = '';
   password: String = '';
 
-  constructor(private networkService: NetworkService, private router: Router) { }
 
   ngOnInit(): void {
   }
+
 
   onSignUpPost(): void {
 
@@ -43,7 +46,7 @@ export class SignUpComponent implements OnInit {
       alert('Please a valid email.');
       return;
     }
-    
+
     if (this.password.length == 0) {
       alert('Please enter your password.');
       return;
@@ -75,6 +78,9 @@ export class SignUpComponent implements OnInit {
 
 }
 
+onSignIn(): void {{
+  this.router.navigate(['sign_in']);}
+
 }
 
-
+}
